@@ -1,3 +1,2 @@
-##Simple Music Player## 
-
-work in progress
+**Simple Music Player**
+- work in progress
