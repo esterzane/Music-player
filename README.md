@@ -1,4 +1,4 @@
-**Simple Music Player** 
-🎧 🎵  🎧 ⏯️ 
+** 🎧 Simple Music Player 🎵  ** 
 
-- work in progress
+
+🎧 ⏯️  work in progress
