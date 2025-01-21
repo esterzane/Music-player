@@ -1,10 +1,10 @@
-const progress = document.getElementById ("progress");
-const song = document.getElementById ("song");
-const ctrlIcon = document.getElementById ("ctrlIcon");
+const progress = document.getElementById("progress");
+const song = document.getElementById("song");
+const ctrlIcon = document.getElementById("ctrlIcon");
 
 song.onloadedmetadata = () => {
-    progress.max = song.duration; 
-    progress.value = song.currentTime; 
+    progress.max = song.duration;
+    progress.value = song.currentTime;
 }
 
 const playPause = () => {
@@ -19,6 +19,26 @@ const playPause = () => {
         ctrlIcon.classList.add("fa-pause");
         ctrlIcon.classList.remove("fa-play");
     }
+
 }
 
+song.play()
+    .then(() => {
+        setInterval(() => {
+            progress.value = song.currentTime;
+        }, 500);
+    })
+    .catch((error) => {
+        console.error('Error playing the song:', error);
+    });
+
 ctrlIcon.addEventListener("click", playPause);
+
+
+
+progress.onchange = () => {
+   song.play();
+    song.currentTime = progress.value;
+    ctrlIcon.classList.add("fa-pause");
+    ctrlIcon.classList.remove("fa-play");
+}
